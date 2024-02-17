@@ -1,0 +1,20 @@
+body{
+    background-color: lightcyan;
+    margin: 10px;
+    color: black;
+    
+}
+
+.square{
+    width: 88px;
+    height: 88px;
+    background:white;
+    display: inline-block;
+    margin: -2px;
+    font-size: 60px;
+    text-align: center;
+
+}
+.dark{
+    background: darkgreen;
+}

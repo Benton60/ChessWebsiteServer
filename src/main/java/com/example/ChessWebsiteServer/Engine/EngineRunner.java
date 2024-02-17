@@ -15,8 +15,6 @@ public class EngineRunner implements Runnable {
     @Override
     public void run() {
         double time = System.nanoTime();
-        //System.out.println(generatePositions(masterPosition, 3));
-        //System.out.println(Search(masterPosition, depth));
         Move move = getBestMove();
         System.out.println(move.toText());
         move.makeMove(masterPosition.getBoard());
@@ -37,16 +35,11 @@ public class EngineRunner implements Runnable {
             temp.changeColor();
             double eval = Search(temp, totalDepth, bestEval, bestEval, -1000000, 1000000); // checks the eval for that line
             System.out.println(move.toText() + "   " + eval);
-            //if(checkLastPositions(temp)){// checks whether the position is contained in the recent positions array from the api class.
-            //    eval -= 250;
-            //}
             if(eval > bestEval){
                 bestMove = move; // if the eval is better than the current line choose this one
                 bestEval = eval;
             }
         }
-        //System.out.println(bestEval);
-        //System.out.println("Snipped: " + snipped);
         return bestMove;
     }
     public static void printChessBoard(int[][] board){
