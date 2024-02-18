@@ -60,7 +60,3 @@ function sendMessage() {
     stompClient.send("/Engine.getMoves", {}, JSON.stringify(pos));
     console.log("Sent");
 }
-
-
-
-
